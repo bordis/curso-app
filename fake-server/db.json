@@ -1,0 +1,20 @@
+{
+  "list-food": [
+    {
+      "nome": "Arroz",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nome": "Churrasco"
+    },
+    {
+      "id": 4,
+      "nome": "Macarrão"
+    },
+    {
+      "nome": "teste",
+      "id": 5
+    }
+  ]
+}

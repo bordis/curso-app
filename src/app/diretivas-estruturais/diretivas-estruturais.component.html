@@ -1,0 +1,37 @@
+<p *ngIf="true">True</p>
+<p *ngIf="false">False</p>
+<p *ngIf="condition; else elseBlock">Condition true</p>
+<ng-template #elseBlock>
+    <p>Condition false</p>
+</ng-template>
+<hr>
+<div *ngIf="conditionClick" [ngStyle]="{background: cor, width: '300px', height: '300px'}">
+</div>
+<button (click)="onClick()" *ngIf="conditionClick">Esconder</button>
+<button (click)="onClick()" *ngIf="!conditionClick">Mostrar</button>
+<button (click)= "mudarCor()">Mudar Cor</button>
+<hr>
+<p *ngFor="let item of list; let i = index">
+    {{i+1}} - Nome: {{item.nome}} - Idade: {{item.idade}} - 
+    
+    <span [ngSwitch]="item.permision">
+        <span *ngSwitchCase="2"> * Admin</span>
+        <span *ngSwitchCase="1"> * User</span>
+        <span *ngSwitchDefault> * Not allow</span>
+    </span>
+    - 
+    <button (click)="deleteList(i)">Excluir</button>
+</p>
+<p>Total de itens: {{list.length}}</p>
+<form [formGroup]="userForm" (ngSubmit)="addList()">
+    <label for="nome">Nome: </label>
+    <input id="nome" type="text" formControlName="nome">
+    <br>
+    <label for="idade">Idade: </label>
+    <input id="idade" type="text" formControlName="idade">
+    <br>
+    <label for="permision">Permision: </label>
+    <input id="permision" type="text" formControlName="permision">
+    <br>
+    <button type="submit">Submit</button>
+  </form>

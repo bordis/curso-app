@@ -1,0 +1,28 @@
+<!-- Teste te content -->
+<ng-content select="h1"></ng-content>
+<!-- Teste te content -->
+<h4>Dia e hora: {{dateTime | date:'dd/MM/yyy hh:mm' }}</h4>
+<p>NgClass</p>
+<div [ngClass]="{'active':valor, 'disable':!valor}"></div>
+<button (click)="onClick()">Mudar Cor</button>
+<hr>
+<p>NgStyle</p>
+<div [ngStyle]="{'width.px':tamanho, 'height.px':tamanho, 'background': 'red'}"></div>
+<button (click)="mudarTamanho()">Mudar tamanho</button>
+<hr>
+<p>NgStyle</p>
+<input [(ngModel)]="nome">
+<br>
+<button (click)="salvar()">Salvar</button>
+<p *ngFor="let item of nomes; let i = index" (click)="delete(i)">{{item.nome}}</p>
+<hr>
+<p>NgTemplate</p>
+<ng-template ngFor let-item [ngForOf]="nomes">
+    <p> {{item.nome | uppercase}} </p>
+</ng-template>
+<input [(ngModel)]="nome">
+<br>
+<button (click)="salvar()">Salvar</button>
+<hr>
+<p>NgContent</p>
+<ng-content select="h3"></ng-content>
